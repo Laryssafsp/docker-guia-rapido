@@ -24,7 +24,7 @@ obs.: created: é a data criada da imagem na maquina
 ```docker stop [id]``` --> parar o container
 ```docker stop [name]``` --> parar o container
 ```docker run``` 
-```docker run -it ubuntu``` --> dentro do container (S.O)
+```docker run -it ubuntu``` --> dentro do container (S.O) -  executar um conteiner com a imagem do ubuntu
 
 ### Executando opções de ajuda
 ```docker --help ```
@@ -92,19 +92,43 @@ Obs.: se sair do container, ele permanece a execução em background;
 ```unzip NOME_COPILADO.zip```
 
 ### Copiando arquivos do container para máquina local
-```docker cp Ubuntu-A:/destino/Meuzip.zip  Zipcopia.zip```
+
+```docker cp Ubuntu-A:/destino/Meuzip.zip  Zipcopia.zip``` -->> para o destino Zipcopia.zip
 
 ### TAGs
 ```docker pull debian:9``` ->> tag:versão
 ```docker run -dti debian:9``` ->> executar e gera um nome aleatório para o container
+
 ### Criando um contêiner do MySQL
-```docker cp Ubuntu-A:/destino/Meuzip.zip  Zipcopia.zip``` -->> para o destino Zipcopia.zip
- 
+já existe um container do MySQL com versões específicas
+-- necessário específicar variáveis de ambiente
+```docker pull mysql``` ->> chamar a imagem do MySQL
+
+--> qual o host e set de variáveis
+```docker run -e MYSQL_ROOT_PASSWORKS=Senha123 --name mysql-A -d -p 3306:3306 mysql``` -->> criar um banco de dados
+--> MYSQL_ROOT_PASSWORKS=Senha123 = escolher a senha
+-->> nome do comntainer = mysql-A 
+-->> -d = execução em background
+-->> -p 3306:3306 = libração de porta (padrão do MySQL) porta:porta_padrao nome_imagem
+```docker exec -it musql-A bash``` -->> bash para realizar as configurações necessárias
+```mysql -u root -p --protocol=tcp``` -->> acesso ao banco
+
+
+```docker inspect mysql-A``` -->> informações da MV
+
+### Parando e reiniciando um container
+```docker stop mysql-A``` -->> parar de executar o container, porém ele ainda existe
+```docker start mysql-A``` -->> reiniciar o container
+```docker ps``` -->> verifica quem esta em execução
+```docker rm mysql-A``` -->> excluir o container e perde os dados
+
+-- se quer manter os dados, pode mapear o local de armazenamento dos dados
+
 ### Acessando um container externamente
 ```docker pull mysql```
-```docker run -e MYSQL_ROOT_PASSWORD=Senha123 --name mysql-A -d -p 3306:3306 mysql```
+```docker run -e MYSQL_ROOT_PASSWORD=Senha123 --name mysql-A -d -p 3306:3306 mysql``` 
 ```docker exec -it mysql-A bash```
-```mysql -u root -p --protocol=tcp```
+```mysql -u root -p --protocol=tcp``` -->> acesso ao banco
 
 
 ```CREATE DATABASE aula;```
@@ -112,3 +136,6 @@ Obs.: se sair do container, ele permanece a execução em background;
 
 ```docker inspect mysql-A```
 ```mysql -u root -p --protocol=tcp```
+
+
+
