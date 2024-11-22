@@ -43,11 +43,30 @@ docker volume rm teste
 
 # Arquivos: 
 ## Exemplo - Montando (mount) um local de armazenamento
+caso perca o container, pode recuperar os dados armazenados localmente
+#### verificar dados
+```docker inspect -A```
+#### Diretório de onde o MYSQL esta dentro do container -->> 
+```
+Mounts [{...
+  Type: volume
+  Destination : diretório
+...}]
+```
+#### criar pasta
+```
+mkdir /pasta
+mkdir /pasta/mysql-A
+```
+#### salvar local
 ```
 docker run -e MYSQL_ROOT_PASSWORD=Senha123 --name mysql-A -d -p 3306:3306 --volume=/data:/var/lib/mysql mysql
-
+```
+#### conexão com local
+```
 mysql -u root -p --protocol=tcp --port=3306
-
+```
+```
 CREATE TABLE alunos (
     AlunoID int,
     Nome varchar(50),
@@ -59,3 +78,4 @@ CREATE TABLE alunos (
 INSERT INTO alunos (AlunoID, Nome, Sobrenome, Endereco, Cidade) VALUES (1, 'Carlos Alberto', 'da Silva', 'Av. que sobe e desce que ninguém conhece', 'Manaus');
 
 ```
+ --volume=/data:/var/lib/mysql mysql = host:container
