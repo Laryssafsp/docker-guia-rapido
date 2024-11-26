@@ -55,6 +55,11 @@ obs.: entra no container, realiza o comando e fecha a execução
 
 ```docker rm [name]```
 
+```docker rm  -f [name]``` : força a exclusão do container
+```docker volume rm``` : exclusão do volume.
+obs: você excluir o container não exclui o volune
+```docker volume prune``` : limpa todos os volumes existentes no host
+
 --> o mesmo com as imagen
 ```docker images``` --> visualizar
 
