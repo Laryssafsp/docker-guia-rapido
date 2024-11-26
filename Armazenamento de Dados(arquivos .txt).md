@@ -100,17 +100,21 @@ docker run -dti --mount type=bind,src=/opt/teste,dst=/teste,ro debian
 docker volume create teste
 docker volume ls
 /var/lib/docker/volumes/teste/_data
-	
-docker run -dti --mount type=volume,src=teste,dst=teste debian
+```	
+```docker run -dti --mount type=volume,src=teste,dst=teste debian``` 
 
-docker volume rm teste
-```
+```docker run -dti name teste mount type=volume,src=teste,dst=teste debian``` 
+
+``` docker volume rm teste```: pode não estar vinculado a nenhum container
+
+**Para verificar qual o tipo de volume:**
+```docker inspect centos-A``` --> dentro de Mounts -> Tyoe -> Source (onde estão os dados) > destino
 
 # Apache Container
 ```
 docker run  --name apache-A -d -p 80:80 --volume=/data/apache-A:/usr/local/apache2/htdocs/ httpd
 docker run  --name php-A -d -p 8080:80 --volume=/data/php-A:/var/www/html php:7.4-apache
-
+```
 <!DOCTYPE html>
 <html>
 <head>
