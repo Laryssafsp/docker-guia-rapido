@@ -148,3 +148,16 @@ phpinfo();
 ?>
 ```
 
+# Questões:
+
+1- O comando correto para referenciar um volume com o nome data para a pasta /var/lib/mysql em um container executado com a imagem do MySQL é: ```docker run --name mysql-A -d -p 3306:3306 --volume=data:/var/lib/mysql mysql```
+
+2-  O comando correto para criar um volume com o nome de DIO é: ```docker volume create DIO```
+
+3-O parâmetro utilizado para indicar o nome do container no comando docker run é:
+ ```--name ```
+Exemplo de uso:  ```docker run --name meu-container -d nginx ```
+
+4- O parâmetro utilizado no comando docker run para referenciar as portas utilizadas pelo container é:
+```-p```
+Exemplo de uso: ```docker run -p 8080:80 nginx```
