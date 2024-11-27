@@ -111,9 +111,26 @@ docker volume ls
 ```docker inspect centos-A``` --> dentro de Mounts -> Tyoe -> Source (onde estão os dados) > destino
 
 # Apache Container
+
+Instalar a imagem:``` docker pull httpd```
+
+
 ```
 docker run  --name apache-A -d -p 80:80 --volume=/data/apache-A:/usr/local/apache2/htdocs/ httpd
+```
+
+-- PHP com versão específica e rodando em apache
+Instalar a imagem:``` docker pull php:7.4-apache```
+
+Pegar a informação na porta 80 e aplicar no host 8080
+pasta criada: php-A
+arquivos salvas na pasta padrão: www/html
+imagem que subirá no container: php:7.4-apache
+```
 docker run  --name php-A -d -p 8080:80 --volume=/data/php-A:/var/www/html php:7.4-apache
+```
+```namo index.php```: arquivo com os comandos:
+
 ```
 <!DOCTYPE html>
 <html>
