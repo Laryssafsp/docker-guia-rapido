@@ -79,9 +79,19 @@ Este comando é útil em testes de desempenho ou stress para verificar como o si
 
 ```docker network ls```: redes disponíveis <br>
 ```docker network inspect bridge```: containers disponíveis na rede <br>
+```docker network inspect [rede]```: containers especificos disponíveis na rede <br>
 ```apt-get install iputils-ping``` : O comando apt-get install iputils-ping instala o utilitário ping no seu sistema, permitindo que você possa usar o ping para testar a conectividade de rede com outros dispositivos e hosts.<br>
 ```docker network create minha-rede```: Cria uma rede e especifica uma subrede para essa rede criada <br>
 ```docker run -dit --name Ubuntu-B --network minha-rede  ubuntu ```: criando container específicando a rede.
 
+* Consegue comunicação com container se estiverem no mesmo IP, isolando quando expecifica-se a rede
 
+# Quesçoes:
 
+- 1/4: Qual comando pode ser utilizado para listar todos os containers em execução? ``` docker container ls```
+
+- 2/4: Qual comando pode ser utilizado para listar todas as imagens disponíveis em um host? ```docker image ls```
+
+- 3/4: Qual comando é utilzado para atualizar a quantidade de memória em 128 megabytes em um container com o nome de php-A? ```docker update php-A -m 128M```
+
+- 4/4: Qual aplicação podemos utilizar para realizar um teste de stress no container? ```stress```
