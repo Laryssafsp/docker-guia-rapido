@@ -1,0 +1,34 @@
+Os termos host e porta são usados em redes de computadores para identificar e estabelecer a comunicação entre dispositivos. Eles desempenham um papel importante na configuração e no funcionamento de redes, servidores e serviços.
+
+1. Host
+
+O host é o endereço de um dispositivo ou computador em uma rede.
+Ele pode ser identificado por diferentes formas, dependendo do tipo de rede:
+Nome de domínio: Um nome legível para os humanos, como www.exemplo.com. Isso é frequentemente usado na internet.
+Endereço IP: Um número único que identifica um dispositivo em uma rede. Pode ser algo como 192.168.1.1 (IPv4) ou 2001:0db8:85a3:0000:0000:8a2e:0370:7334 (IPv6).
+O host pode ser, por exemplo, um servidor web, um computador local, um roteador, ou qualquer dispositivo conectado à rede.
+
+2. Porta
+
+A porta é um número usado para identificar um serviço específico em um host.
+Os computadores e servidores em redes utilizam portas para distinguir diferentes tipos de tráfego que chegam a eles. Isso permite que vários serviços (como um servidor web, FTP, e-mail) funcionem ao mesmo tempo em uma mesma máquina.
+Cada serviço tem uma porta associada:
+HTTP (para páginas web): normalmente usa a porta 80.
+HTTPS (para páginas web seguras): usa a porta 443.
+FTP (para transferência de arquivos): utiliza a porta 21.
+SSH (para acesso remoto seguro): utiliza a porta 22.
+Como Funcionam Juntos?
+Juntos, host e porta são usados para criar um endereço completo que direciona a comunicação para o lugar correto. Por exemplo, no caso de um servidor web:
+
+O host seria www.exemplo.com (ou seu endereço IP, como 192.168.1.1).
+A porta seria 80 (por padrão para HTTP).
+Então, quando você acessa http://www.exemplo.com, seu computador sabe que deve se conectar ao host www.exemplo.com na porta 80, onde um servidor web está esperando requisições HTTP.
+
+Exemplo em um URL:
+URL: http://192.168.1.1:8080
+Host: 192.168.1.1 (endereço IP do servidor)
+Porta: 8080 (porta específica para um serviço na máquina)
+Conclusão:
+Host é o identificador do dispositivo ou servidor.
+Porta é o número de identificação de um serviço específico no host.
+Esses dois parâmetros são fundamentais para estabelecer e direcionar a comunicação entre computadores e servidores em uma rede.
